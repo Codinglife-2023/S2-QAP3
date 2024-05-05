@@ -1,0 +1,76 @@
+h1,h2,h3{
+    color: #551f9c;
+    background-color: #ecea9d;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.container{
+    display: block;
+    padding: 40px;
+    outline: #83c4ed solid 25px;
+    margin: 0 auto;
+    max-width: 800px;
+    height: 600px;
+    background-color: #f2ee79;
+    border-radius: 15px;
+    color: rgb(45, 12, 12);
+    text-align:left;
+}
+
+input {
+    margin: 20px;
+    background-color: aqua;
+    width: 200px;
+    height: 30px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #83c4ed;
+    color: #551f9c;
+    border: 1px solid #551f9c;
+    margin: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.json-data {
+    height: 200px;
+    overflow: auto;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #551f9c;
+    background-color: #83c4ed;
+    color: #551f9c;
+    text-align: left;
+    font: 1em sans-serif;
+}
+
+.container1 {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #452c77;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.todo-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #ecea9d;
+    border-radius: 5px;
+    font: 1em sans-serif;
+    color: #4f33dc;
+}
+
+.error-message {
+    color: red;
+}

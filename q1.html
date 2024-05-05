@@ -1,0 +1,66 @@
+
+<!--
+    QAP # 3
+    Prepared by Maryam Shaheen"
+    Submitted on April 18, 2024
+-->
+<!--
+    This document covers question 1 of the QAP.
+    JavaScript code for creating and displaying user objects is included in this document.
+-->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="userForm">
+            <input type="text" id="name" placeholder="Name">
+            <input type="number" id="age" placeholder="Age">
+            <br>
+            <button type="button" onclick="makeObj()">User</button>
+            <br>
+            <button type="button" onclick="displayObj()">Display</button>
+        </form>
+        <div id="userDisplay"></div>
+    </div>
+
+    <script>
+        // Function to create a user object
+        function User(n, a) {
+            this.name = n;
+            this.age = a;
+        }
+
+        // Array to store user objects
+        var users = [];
+
+        // Function to create user object and push it to the array
+        function makeObj() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+
+            var user = new User(name, age);
+            users.push(user);
+
+            document.getElementById('name').value = ''; // Clear input fields
+            document.getElementById('age').value = ''; // Clear input fields
+        }
+
+        // Function to display all user objects
+        function displayObj() {
+            var displayArea = document.getElementById('userDisplay');
+            displayArea.innerHTML = ''; // Clear previous content
+
+            users.forEach(function(user) {
+                displayArea.innerHTML += '<p>Name: ' + user.name + ', Age: ' + user.age + '</p>';
+            });
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!--
+    QAP # 3
+    Prepared by "Maryam Shaheen"
+    Submitted on April 18, 2024
+-->
+<!--
+    This document covers question 2 of the QAP.
+    Javascript code for fetching and displaying JSON data is included in this document.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show JSON Data</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+<body>
+
+    <div class="container">
+        <button onclick="showJSON()">Show JSON</button>
+        <div id="jsonData"></div>
+    </div>
+
+    <script>
+            function showJSON() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var jsonData = JSON.parse(xhr.responseText);
+                        displayJSON(jsonData);
+                    } else {
+                        console.error('Failed to load JSON file');
+                    }
+                }
+            };
+            xhr.open('GET', 'user.json', true);
+            xhr.send();
+        }
+
+        function displayJSON(data) {
+            var jsonDataDiv = document.getElementById('jsonData');
+            jsonDataDiv.innerHTML = ''; // Clear previous content
+
+            if (typeof data === 'object') {
+                jsonDataDiv.innerHTML += '<p>Name: ' + data.name + '</p>';
+                jsonDataDiv.innerHTML += '<p>Email: ' + data.email + '</p>';
+                jsonDataDiv.innerHTML += '<p>Company: ' + data.company + '</p>';
+                jsonDataDiv.innerHTML += '<p>Address: ' + data.address + '</p>';
+            } else {
+                console.error('Data is not an object');
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- Path: q3.html -->
